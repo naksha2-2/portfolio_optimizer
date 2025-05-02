@@ -1,8 +1,7 @@
 
 
 @app.route('/')
-def home():
-    return "Welcome to the Financial Portfolio Optimizer API!"
+
 
 @app.route('/get_data', methods=['GET'])
 def get_data():
