@@ -36,18 +36,7 @@
         p_return, p_vol = portfolio_performance(weights)
         return - (p_return - 0.01) / p_vol  # Assuming 1% risk-free rate
 
-    # Constraints: weights must sum to 1
-    constraints = ({'type': 'eq', 'fun': lambda x: np.sum(x) - 1})
-    bounds = tuple((0, 1) for _ in range(num_assets))
-    init_guess = num_assets * [1. / num_assets]
-
-    result = minimize(neg_sharpe_ratio, init_guess, bounds=bounds, constraints=constraints)
-
-    if not result.success:
-        return jsonify({"error": "Optimization failed!"}), 500
-
-    optimized_weights = result.x
-    port_return, port_vol = portfolio_performance(optimized_weights)
+ 
 
     return jsonify({
         "optimized_allocation": dict(zip(symbols_list, np.round(optimized_weights, 3).tolist())),
