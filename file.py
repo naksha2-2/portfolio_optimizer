@@ -2,9 +2,6 @@
 
 
     if not symbols:
-        return jsonify({"error": "Please provide stock symbols!"}), 400
-
-    symbols_list = symbols.split(',')
     data = {}
 
     for symbol in symbols_list:
