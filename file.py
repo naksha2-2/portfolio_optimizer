@@ -1,10 +1,4 @@
-from flask import Flask, jsonify, request
-import yfinance as yf
-import pandas as pd
-import numpy as np
-from scipy.optimize import minimize
 
-app = Flask(__name__)
 
 @app.route('/')
 def home():
