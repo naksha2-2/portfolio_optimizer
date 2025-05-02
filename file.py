@@ -4,21 +4,11 @@
     if not symbols:
         return jsonify({"error": "Please provide stock symbols!"}), 400
 
-    symbols_list = symbols.split(',')
-    data = {}
+  
 
     for symbol in symbols_list:
         stock = yf.Ticker(symbol)
-        hist = stock.history(period="1y")
-        data[symbol] = hist['Close'].tolist()
 
-    return jsonify(data)
-
-@app.route('/optimize', methods=['GET'])
-def optimize_portfolio():
-    symbols = request.args.get('symbols')  # e.g., ?symbols=AAPL,MSFT,GOOGL
-    if not symbols:
-        return jsonify({"error": "Please provide stock symbols!"}), 400
 
     symbols_list = symbols.split(',')
 
