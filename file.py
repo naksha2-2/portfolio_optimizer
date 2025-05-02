@@ -5,13 +5,6 @@
 
     if len(symbols_list) > 1:
         try:
-            close_prices = pd.DataFrame({
-                symbol: raw_data[symbol]['Close']
-                for symbol in symbols_list
-                if 'Close' in raw_data[symbol]
-            })
-        except KeyError:
-            return jsonify({"error": "Adjusted Close data not found!"}), 500
     else:
         try:
             close_prices = raw_data[['Close']]
