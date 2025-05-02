@@ -1,19 +1,7 @@
 
 
 
-    if not symbols:
-        return jsonify({"error": "Please provide stock symbols!"}), 400
-
-  
-
-    for symbol in symbols_list:
-        stock = yf.Ticker(symbol)
-
-
-    symbols_list = symbols.split(',')
-
-    # Download data and handle single vs multiple symbol structures
-    raw_data = yf.download(symbols_list, period="1y", group_by='ticker', auto_adjust=True)
+   
 
     if len(symbols_list) > 1:
         try:
