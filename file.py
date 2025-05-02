@@ -1,11 +1,6 @@
 
 
-@app.route('/')
 
-
-@app.route('/get_data', methods=['GET'])
-def get_data():
-    symbols = request.args.get('symbols')  # e.g., ?symbols=AAPL,GOOGL,MSFT
     if not symbols:
         return jsonify({"error": "Please provide stock symbols!"}), 400
 
