@@ -62,7 +62,7 @@ yfinance
 
 📡 Data Flow
 
-User inputs stock tickers + capital
+User inputs stock tickers and capital
 
 App downloads OHLC data (Yahoo Finance)
 
